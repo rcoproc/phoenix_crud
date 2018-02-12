@@ -1,0 +1,6 @@
+<h2>Manutenção da Tarefa</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: todo_path(@conn, :update, @todo) %>
+
+<%= link "Voltar", to: todo_path(@conn, :index) %>

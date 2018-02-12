@@ -1,0 +1,32 @@
+<h2>Tarefas</h2>
+
+<%= link "Nova Tarefa", to: todo_path(@conn, :new) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Realizado?</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for todo <- @todos do %>
+    <tr>
+      <td><%= todo.title %></td>
+      <td><%= todo.description %></td>
+      <td><%= todo.completed %></td>
+
+      <td class="text-right">
+        <%= link "Visualizar", to: todo_path(@conn, :show, todo), class: "btn btn-default btn-xs" %>
+        <%= link "Alterar", to: todo_path(@conn, :edit, todo), class: "btn btn-default btn-xs" %>
+        <%= link "Excluir", to: todo_path(@conn, :delete, todo), method: :delete, data: [confirm: "Você tem certeza?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "Nova Tarefa", to: todo_path(@conn, :new) %>

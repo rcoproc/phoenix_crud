@@ -1,0 +1,6 @@
+<h2>Nova Tarefa</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: todo_path(@conn, :create) %>
+
+<%= link "Voltar", to: todo_path(@conn, :index) %>

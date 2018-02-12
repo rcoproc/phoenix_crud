@@ -1,0 +1,24 @@
+<h2>Tarefa</h2>
+
+<ul>
+
+  <li>
+    <strong>Título:</strong>
+    <%= @todo.title %>
+  </li>
+
+  <li>
+    <strong>Descrição:</strong>
+    <%= @todo.description %>
+  </li>
+
+  <li>
+    <strong>Realizado:</strong>
+    <%= @todo.completed %>
+  </li>
+
+</ul>
+
+<%= link "Alterar", to: todo_path(@conn, :edit, @todo) %>
+&nbsp;
+<%= link "Voltar", to: todo_path(@conn, :index) %>
