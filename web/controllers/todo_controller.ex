@@ -19,7 +19,7 @@ defmodule PhoenixCrud.TodoController do
     case Repo.insert(changeset) do
       {:ok, _todo} ->
         conn
-        |> put_flash(:info, "Todo created successfully.")
+        |> put_flash(:info, "Tarefa criada com sucesso.")
         |> redirect(to: todo_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -44,7 +44,7 @@ defmodule PhoenixCrud.TodoController do
     case Repo.update(changeset) do
       {:ok, todo} ->
         conn
-        |> put_flash(:info, "Todo updated successfully.")
+        |> put_flash(:info, "Tarefa atualizada com sucesso.")
         |> redirect(to: todo_path(conn, :show, todo))
       {:error, changeset} ->
         render(conn, "edit.html", todo: todo, changeset: changeset)
@@ -59,7 +59,7 @@ defmodule PhoenixCrud.TodoController do
     Repo.delete!(todo)
 
     conn
-    |> put_flash(:info, "Todo deleted successfully.")
+    |> put_flash(:info, "Tarefa excluida com sucessso.")
     |> redirect(to: todo_path(conn, :index))
   end
 end

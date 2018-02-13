@@ -6,24 +6,26 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :title, class: "control-label" %>
+    <%= label f, :title, "Título", class: "control-label" %>
     <%= text_input f, :title, class: "form-control" %>
     <%= error_tag f, :title %>
   </div>
 
   <div class="form-group">
-    <%= label f, :description, class: "control-label" %>
+    <%= label f, :description, "Descrição", class: "control-label" %>
     <%= text_input f, :description, class: "form-control" %>
     <%= error_tag f, :description %>
   </div>
 
   <div class="form-group">
-    <%= label f, :completed, class: "control-label" %>
+    <%= label f, :completed, "Finalizada",  class: "control-label" %>
     <%= checkbox f, :completed, class: "form-control" %>
     <%= error_tag f, :completed %>
   </div>
 
   <div class="form-group">
     <%= submit "Gravar", class: "btn btn-primary" %>
+    &nbsp;
+    <%= reset "Limpar", class: "btn btn-default" %>
   </div>
 <% end %>
